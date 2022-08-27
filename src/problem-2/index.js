@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const Problem2Page = () =>{
     return(
         <div>
-            hello1
+            hello2
         </div>
     );
 };

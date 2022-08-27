@@ -1,11 +1,14 @@
 import React from "react";
+import Layout from "./Components/Layout";
 
 import PageRoutes from "./Routes";
 
 const App = () =>{
     return(
         <div>
-            <PageRoutes/>
+            <Layout>
+                <PageRoutes/>
+            </Layout>
         </div>
     );
 };
