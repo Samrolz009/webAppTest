@@ -12,7 +12,7 @@ const Sidebar = () =>{
     return(
         <SSidebar>
             <SDivider/>
-            {linksArray.map(({ icon, label, notification, to }) => (
+            {linksArray.map(({ icon, label, to }) => (
                 <SLinkContainer key={label} isActive={pathname === to}>
                     <SLink to={to} style={{width: `fit-content`}}>
                         <SIcon>{icon}</SIcon>
