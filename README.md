@@ -2,7 +2,7 @@
 npm install
 npm start
 
-# the backend was created in a local environment not in a virtual environment
+# the backend was created in a local environment not in a virtual environment, also, Docker was not utilized
 
 # Inside the testinterviewBack run the following command to install the dependencies
 pip install django djangorestframework django-cors-headers
