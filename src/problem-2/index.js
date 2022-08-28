@@ -1,26 +1,20 @@
 import React, {useState} from "react";
-import axios from "axios";
 import { TextField, Button } from "@mui/material";
+import sendValue from "./api";
 
 
 const Problem2Page = () =>{
 
     const [Value,setValue] = useState("");
-
-    const API_URL = "http://localhost:8000/problems/";
+    const [result,setResult] = useState(null);
 
     const onChange = e => {
         setValue( e.target.value );
     };
 
-    const sendValue = e => {
+    const python = async e => {
         e.preventDefault();
-        console.log(API_URL, Value);
-        axios.post(API_URL, {input: Value})
-        .then(() => {
-          console.log("sent");
-        })
-        .catch((error) => {console.log(error)});
+        setResult(await sendValue(Value));
     };
 
     return(
@@ -32,12 +26,12 @@ const Problem2Page = () =>{
                     onChangeCapture={onChange}
                 />
                 <div style={{marginTop:'20px'}}>
-                    <Button variant="outlined" color="secondary" onClick={sendValue}>Run Test</Button>
+                    <Button variant="outlined" color="secondary" onClick={python}>Run Test</Button>
                 </div>
             </form>
             <div>
                 <h3 style={{fontFamily:'Roboto'}}>Output</h3>
-                <pre id="output-2">iuhiugsd</pre>
+                <pre id="output-2">{result}</pre>
             </div>
         </div>
     );
